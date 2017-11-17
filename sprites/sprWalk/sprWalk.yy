@@ -252,7 +252,7 @@
         }
     ],
     "origin": 7,
-    "playbackSpeed": 8,
+    "playbackSpeed": 9,
     "playbackSpeedType": 0,
     "sepmasks": false,
     "swatchColours": null,
