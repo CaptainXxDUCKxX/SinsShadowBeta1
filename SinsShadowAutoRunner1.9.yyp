@@ -519,6 +519,14 @@
             }
         },
         {
+            "Key": "be47a033-d893-4ee7-9e53-f99593cb1c37",
+            "Value": {
+                "id": "215f8d45-6d41-454c-b8d7-3ab6854439f4",
+                "resourcePath": "sprites\\sprTimeout\\sprTimeout.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bebaa64b-f80c-4a16-ac3e-705f68084b1b",
             "Value": {
                 "id": "06c50805-ae0e-4ba6-84bc-a26faf81b95f",
