@@ -49,3 +49,6 @@ bJumping = false;
 //physics collision
 phys_x = phy_position_x
 phys_y = phy_position_y
+
+//Controller
+controller = 0;

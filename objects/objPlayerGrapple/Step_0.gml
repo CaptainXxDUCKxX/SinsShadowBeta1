@@ -1,7 +1,7 @@
  /////STEP\\\\\
 
 ///// Grapple functionality /////
-if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
+if(keyboard_check_pressed(vk_up)) || (gamepad_button_check_pressed(0, gp_face3)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
 {
 	active = true;
 	instNearestGP = instance_nearest(x, y, objGrappleBlock);
@@ -18,7 +18,7 @@ if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (dist
 	}
 }
 
-if(keyboard_check_released(vk_up)) && (active == true)
+if(keyboard_check_released(vk_up)) && (active == true) || (gamepad_button_check_released(0, gp_face3)) && (active == true)
 {
 	physics_joint_delete(jointGrapple);
 	active = false;
@@ -27,7 +27,7 @@ if(keyboard_check_released(vk_up)) && (active == true)
 
 /// PLAYER MOVEMENT /////
 if(hspeed == 0) sprite_index = sprIdle;
-if(keyboard_check(ord("D")))
+if (keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
 {
 	image_xscale = 1;
 	physics_apply_force(x, y, 510, 0);
@@ -38,7 +38,7 @@ if(keyboard_check(ord("D")))
 		physics_apply_angular_impulse(100);
 		sprite_index = sprAmeliaSwing;
 	}
-	if(keyboard_check(vk_down))
+	if(keyboard_check(vk_down)) || (gamepad_button_check(0, gp_shoulderr))
 	{
 		bCanSlide = true;
 		tStopSlide = 2;
@@ -49,7 +49,7 @@ if(keyboard_check(ord("D")))
 	}
 }
 
-if(keyboard_check(ord("A")))
+if (keyboard_check(ord("A"))) || (gamepad_button_check(0, gp_padl)) || (gamepad_axis_value(0,gp_axislh) < -0.1)
 {
 	image_xscale = -1;
 	physics_apply_force(x, y, -510, 0);
@@ -60,7 +60,7 @@ if(keyboard_check(ord("A")))
 		physics_apply_angular_impulse(-100);
 		sprite_index = sprAmeliaSwing;
 	}
-	if(keyboard_check(vk_down))
+	if(keyboard_check(vk_down)) || (gamepad_button_check(0, gp_shoulderr))
 	{
 		bCanSlide = true; 
 		tStopSlide = 2;
@@ -82,7 +82,7 @@ if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;
 
 //Fix Application of force when vk_down is pressed in air
 //limit the usage of slide dash to be much shorter; it can be used infinitely, given Amelia has stamina
-if keyboard_check(vk_down) && keyboard_check(ord("D")) && iCurrentStamina > 14
+if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr)) && keyboard_check(ord("D")) && iCurrentStamina > 14
 {
 	bUnspaced = true;
 	iCurrentStamina -= 1; 
@@ -90,7 +90,7 @@ if keyboard_check(vk_down) && keyboard_check(ord("D")) && iCurrentStamina > 14
 	sprite_index = sprSlide;
 }
 
-if keyboard_check(vk_down) && keyboard_check(ord("A")) && iCurrentStamina > 14
+if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr)) && keyboard_check(ord("A")) && iCurrentStamina > 14
 {
 	bUnspaced = true;
 	iCurrentStamina -= 1; 
@@ -102,7 +102,8 @@ if keyboard_check(vk_down) && keyboard_check(ord("A")) && iCurrentStamina > 14
 /////// JUMP CONDITIONS AND FUNCTIONALITY //////
 
 //Used to see if the space key has been released since last successful jump
-if(keyboard_check_released(vk_space))
+if(keyboard_check_released(vk_space)) || (gamepad_button_check_released(0, gp_face1))
+
 {
 	bUnspaced = true;
 }
@@ -118,8 +119,8 @@ else
 	bOnGround = false;
 }
 
-//Jump only under appropriate conditions
-if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
+//Jump only under appropriate conditions for Keyboard
+if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14 
 {
 	bUnspaced = false;
 	physics_apply_impulse(x, y, 0, -460);
@@ -131,6 +132,18 @@ if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurre
 	//image_index = 
 }
 
+//Jump only under appropriate conditions for Controller
+if(gamepad_button_check(0, gp_face1)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
+{
+	bUnspaced = false;
+	physics_apply_impulse(x, y, 0, -460);
+	iCurrentStamina -= 15;
+	bJumping = true;
+	///Jump functionality (pre-physics)///
+	//vspeed += -15;
+	//sprite_index = sprJump;
+	//image_index = 
+}
 //display correct sprite while jumping
 if bJumping == true
 {
