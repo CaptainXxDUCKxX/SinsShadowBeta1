@@ -1,5 +1,8 @@
  /////STEP\\\\\
 
+// INHERIT MOVING PLATFORM MOVEMENT 
+event_inherited();
+
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
 {
@@ -30,7 +33,7 @@ if(hspeed == 0) sprite_index = sprIdle;
 if(keyboard_check(ord("D")))
 {
 	image_xscale = 1;
-	physics_apply_force(x, y, 510, 0);
+	physics_apply_force(x, y, 310, 0);
 	hspeed = 3;
 	sprite_index= sprWalk; 
 	if(active == true)
@@ -52,7 +55,7 @@ if(keyboard_check(ord("D")))
 if(keyboard_check(ord("A")))
 {
 	image_xscale = -1;
-	physics_apply_force(x, y, -510, 0);
+	physics_apply_force(x, y, -310, 0);
 	hspeed = -3;
 	sprite_index = sprWalk;
 	if(active == true)
@@ -122,7 +125,7 @@ else
 if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
 {
 	bUnspaced = false;
-	physics_apply_impulse(x, y, 0, -460);
+	physics_apply_impulse(x, y, 0, -220);
 	iCurrentStamina -= 15;
 	bJumping = true;
 	///Jump functionality (pre-physics)///
@@ -159,6 +162,11 @@ if (iCurrentHP <= 0)
 	instance_destroy(objPlayerGrapple);
 	game_restart();
 } 
+
+if place_meeting(x, y, objMovingPlatform) 
+{
+	
+}
 
 //Bat attack cooldown
 /*

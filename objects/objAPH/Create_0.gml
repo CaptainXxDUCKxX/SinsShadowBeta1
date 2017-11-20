@@ -43,6 +43,7 @@ repeat (iLinkCounter)
 		
 		//link = physics_joint_distance_create(objAPH, objGP, objAPH.x, objAPH.y, objGP.x, objGP.y, false);
 		//link = physics_joint_weld_create(objAPH, objGP, objGP.x, objGP.y, 0, 10, 12, false);
-	}
+	} 
 }
+
 */
