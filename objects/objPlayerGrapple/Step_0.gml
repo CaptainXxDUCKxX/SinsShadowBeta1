@@ -1,8 +1,5 @@
  /////STEP\\\\\
 
-// INHERIT MOVING PLATFORM MOVEMENT 
-event_inherited();
-
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) || (gamepad_button_check_pressed(0, gp_face3)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
 {
@@ -30,6 +27,7 @@ if(keyboard_check_released(vk_up)) && (active == true) || (gamepad_button_check_
 
 /// PLAYER MOVEMENT /////
 if(hspeed == 0) sprite_index = sprIdle;
+
 if (keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
 {
 	image_xscale = 1;
@@ -81,6 +79,7 @@ if(active == true) && (hspeed == 0)
 
 if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;
 
+  
 /// Slide Dash/Dodge Code. She can apply the force in the air for some reason... 
 
 //Fix Application of force when vk_down is pressed in air
