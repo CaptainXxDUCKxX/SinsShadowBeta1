@@ -1,4 +1,4 @@
- /////STEP\\\\\
+  /////STEP\\\\\
 
 // INHERIT MOVING PLATFORM MOVEMENT 
 //event_inherited();
@@ -44,7 +44,7 @@ if(hspeed == 0) sprite_index = sprIdle;
 if(keyboard_check(ord("D")))
 {
 	image_xscale = 1;
-	physics_apply_force(x, y, 310, 0);
+	physics_apply_force(x, y, 280, 0);
 	hspeed = 3;
 	sprite_index= sprWalk; 
 	if(active == true)
@@ -66,7 +66,7 @@ if(keyboard_check(ord("D")))
 if(keyboard_check(ord("A")))
 {
 	image_xscale = -1;
-	physics_apply_force(x, y, -310, 0);
+	physics_apply_force(x, y, -280, 0);
 	hspeed = -3;
 	sprite_index = sprWalk;
 	if(active == true)
