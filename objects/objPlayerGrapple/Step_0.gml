@@ -228,35 +228,57 @@ iPrevFrameX = x;
 
 
 /// ATTACK 
-if(attack == true){
-	if(mouse_check_button(mb_left)) {
-		sprite_index = sprSwordAtk; 
-		image_index = -1;
-		var xdiff = x - xprevious;
-	
-		if(!(xdiff = 0)){
-			deltax = xdiff; 
-		}
-		instance_create_layer(x+ sign(other.x),y+sign(other.y)*32,"Player",objSwordHitbox);
-		if(image_index >= 7) && (mouse_check_button_released(mb_left)){
-			image_speed = 0;
-			sprite_index = objPlayerGrapple;
-		} 
-	}else {
-		sprite_index = objPlayerGrapple;
+if(mouse_check_button(mb_left)){
+	sprite_index = sprSwordAtk; 
+	image_index = -1;
+	var xdiff = x - xprevious;
+
+	if(!(xdiff = 0)){
+		deltax = xdiff;
 	}
-	audio_play_sound(slashAttack, 5, false);
+	instance_create_layer(x+20,y,"Player",objSwordHitbox);
+	if(image_index >= 7) && (mouse_check_button_released(mb_left)){
+		image_speed = 0;
+		sprite_index = sprIdle;
+	}
+	else {
+		sprite_index = sprSwordAtk;
+	}
+	//audio_play_sound(sndSlashAttack, 5, false);
+	}
 
+
+/*
+if(mouse_check_button_pressed(mb_left))
+{
+ sprite_index = sprSwordAtk; 
+ image_index = -1;
+ var xdiff = x - xprevious;
+ audio_play_sound(sndSlashAttack, 5, false);
+ if(!(xdiff = 0))
+ {
+  deltax = xdiff; 
+ }
+ instance_create_layer(x+20,y,"Player",objSwordHitbox);
+ if(image_index >= 7) && (mouse_check_button_released(mb_left))
+ {
+  image_speed = 0;
+  sprite_index = sprIdle;
+ }
 }
-
+else
+{
+ sprite_index = sprIdle;
+}
+*/
 
 
 /*
 if(iAttackTimer > 1){
 	attack = true; 
 }
-
 */
+
 
 ///// DEBUG MESSAGES /////
 //show_debug_message("bJumpImpulseSwitch: " + string(bJumpImpulseSwitch));

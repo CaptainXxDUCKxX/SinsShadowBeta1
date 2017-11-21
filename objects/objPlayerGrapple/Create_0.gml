@@ -19,6 +19,8 @@ phy_fixed_rotation = true;
 attack = false;
 iAttackTimer = 2;
 alarm[2] = iAttackTimer;
+canAttack = true;
+
 
 iPrevFrameX = 0;
 
