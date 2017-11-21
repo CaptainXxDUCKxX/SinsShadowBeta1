@@ -5,22 +5,30 @@
 
 fixtureAmelia = physics_fixture_create();
 physics_fixture_set_circle_shape(fixtureAmelia, 5);
-physics_joint_rope_create(objAPH, objGP, objAPH.x, objAPH.y, objGP.x, objGP.y, 256, false);
-//next_rope = instance_create_layer(x,y + offset_y, "Instances", objRope);
-//physics_joint_set_value(next_rope, phy_joint_damping_ratio,1);
 
 iLinkCounter = 10;
 offset_y = 10;
 host = self;
 grapple = instance_create_layer(x, y, "Instances", objRope);
 attach = physics_joint_distance_create(grapple, objGP, grapple.x, grapple.y, objGP.x, objGP.y, false);
+rope = physics_joint_rope_create(objAPH, objGP, objAPH.x, objAPH.y, objGP.x, objGP.y, 256, false);
+
+physics_fixture_bind(fixtureAmelia, objRope);
+
 //physics_joint_set_value(attach, phy_joint_damping_ratio, 1);
 //physics_joint_set_value(attach, phy_joint_frequency, 100);
+
+//next_rope = instance_create_layer(x,y + offset_y, "Instances", objRope);
+//physics_joint_set_value(next_rope, phy_joint_damping_ratio,1);
+
 
 with(grapple)
 {
 	parent = other.id;
 }
+ 
+/// Creating the links in the rope, giving it rope-like physics
+// if I leave it, it doesn't work
 
 /*
 repeat (iLinkCounter)
