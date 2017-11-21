@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "31850498-ba6b-4912-badc-b515ffa4f065",
+            "Value": {
+                "id": "070e4454-acca-4eb3-b3c6-cb093230be92",
+                "resourcePath": "sprites\\sprMovingPlatformSheet\\sprMovingPlatformSheet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "320fe06b-08d8-4b50-9a18-9b6faf793373",
             "Value": {
                 "id": "89e3a2f7-9fa3-43de-bc60-50215d64ef73",
@@ -407,6 +415,14 @@
             }
         },
         {
+            "Key": "98fe68ff-ab2b-49c8-b5aa-66d6fbbe4074",
+            "Value": {
+                "id": "adbabe05-681b-4748-b380-1d3fbab9b310",
+                "resourcePath": "sprites\\sprite34\\sprite34.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "99506262-601a-48ee-b940-227671602195",
             "Value": {
                 "id": "b98c831b-8a98-4a11-a576-36a5a84f7ee4",
@@ -460,6 +476,14 @@
                 "id": "2f0e85a7-5d55-4dae-8c33-20826919b511",
                 "resourcePath": "objects\\objPlayerGrapple\\objPlayerGrapple.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a6749ae3-301d-457a-ac00-0ade326eef61",
+            "Value": {
+                "id": "5ba6d49b-1d74-4902-b835-79d00d2c4a1d",
+                "resourcePath": "paths\\pathMovingPlatform\\pathMovingPlatform.yy",
+                "resourceType": "GMPath"
             }
         },
         {
@@ -524,6 +548,14 @@
                 "id": "fa31085a-f149-4294-a14e-636acd2c8fd0",
                 "resourcePath": "sprites\\spr_GUI\\spr_GUI.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b9f402d4-0c44-49f9-af48-a360621c194e",
+            "Value": {
+                "id": "7eb9b8bf-7ad6-4732-831b-d3ea47216c69",
+                "resourcePath": "objects\\objMovingPlatformPhys\\objMovingPlatformPhys.yy",
+                "resourceType": "GMObject"
             }
         },
         {
