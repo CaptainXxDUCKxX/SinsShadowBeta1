@@ -6,25 +6,31 @@ if place_meeting(x, y+5, objMovingPlatformPhys)
 {
 	show_debug_message("Hi HOOOOOOOOOOO");
 }
+
 //phy_speed_x = -2;
 
 ///// Grapple functionality /////
+// The iGrappleRadius variable seems to be a bit janky. She can grapple when she's near an instance of objGrappleBlock, but she does not grapple the nearest one
+// only the first one
+// it doesn't matter what instance layer the Grapple Point is on, either 
+// Need to figure out why it's only drawing the physics joint rope on that singular objGrappleBlock... 
 if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
 {
 	active = true;
 	instNearestGP = instance_nearest(x, y, objGrappleBlock);
+	jointGrapple = physics_joint_rope_create(objPlayerGrapple, instNearestGP, (objPlayerGrapple.x + 9), (objPlayerGrapple.y - 41), instNearestGP.x, instNearestGP.y, 100, true); 
 	bJumping = false;
+	/*
 	if instNearestGP.y < y
 	{
 		mx = instNearestGP.x;
-		my = instNearestGP.y;
-		jointGrapple = physics_joint_rope_create(objPlayerGrapple, objGrappleBlock, (objPlayerGrapple.x + 9), (objPlayerGrapple.y - 41), objGrappleBlock.x, objGrappleBlock.y, 100, false);
-		if(distance_to_object(objGrappleBlock) > iGrappleRadius)
+		my = instNearestGP.y;*/
+		if(distance_to_object(objGrappleBlock) > iGrappleRadius) 
 		{ 
 			active = false;
 		}
 	}
-}
+//}
 
 if(keyboard_check_released(vk_up)) && (active == true)
 {
@@ -228,27 +234,29 @@ iPrevFrameX = x;
 
 
 /// ATTACK 
-if(attack == true){
+/*
 	if(mouse_check_button(mb_left)) {
 		sprite_index = sprSwordAtk; 
 		image_index = -1;
 		var xdiff = x - xprevious;
 	
-		if(!(xdiff = 0)){
+		if(!(xdiff = 0))
+		{
 			deltax = xdiff; 
 		}
-		instance_create_layer(x+ sign(other.x),y+sign(other.y)*32,"Player",objSwordHitbox);
-		if(image_index >= 7) && (mouse_check_button_released(mb_left)){
+		instance_create_layer(x,y,"Player",objSwordHitbox);
+		if(image_index >= 7) && (mouse_check_button_released(mb_left))
+		{
 			image_speed = 0;
 			sprite_index = objPlayerGrapple;
 		} 
 	}else {
 		sprite_index = objPlayerGrapple;
 	}
-	audio_play_sound(slashAttack, 5, false);
+	//audio_play_sound(slashAttack, 5, false);
 
-}
 
+*/
 
 
 /*
