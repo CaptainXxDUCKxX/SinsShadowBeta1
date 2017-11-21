@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "0968bf4a-82e0-4849-8059-b3042e2b1d16",
+            "Value": {
+                "id": "da3ab405-a269-4103-992a-4a37c17fc6a1",
+                "resourcePath": "objects\\objHealthPickUp\\objHealthPickUp.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0ca9b57e-b7e6-4e35-84bd-92fe91185984",
             "Value": {
                 "id": "3b48afd2-89ed-47ae-99e6-3f87d9d3791f",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "5eb5c5c0-8adf-4e34-ae99-acbc53184f0d",
+            "Value": {
+                "id": "7b4654aa-99f1-49ea-a7e9-3bb252e82092",
+                "resourcePath": "sprites\\sprDeathScreen\\sprDeathScreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "62dae915-53da-4586-acb9-e7d87058c240",
             "Value": {
                 "id": "72aefe55-9232-4d09-9994-4a6277b8d112",
@@ -316,6 +332,14 @@
                 "id": "dd8dee2a-c296-4961-9e55-12400e54d7b4",
                 "resourcePath": "sprites\\sprRedSky\\sprRedSky.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "72819299-6d39-49cc-b12f-ad1be0ecb2f4",
+            "Value": {
+                "id": "444088dc-e471-42a2-ab75-89935f45104e",
+                "resourcePath": "rooms\\rmDeathScreen\\rmDeathScreen.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -411,14 +435,6 @@
             "Value": {
                 "id": "58c99f0f-dccf-458b-a15e-5ebea5da1eb5",
                 "resourcePath": "sprites\\sprClouds\\sprClouds.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "98fe68ff-ab2b-49c8-b5aa-66d6fbbe4074",
-            "Value": {
-                "id": "adbabe05-681b-4748-b380-1d3fbab9b310",
-                "resourcePath": "sprites\\sprite34\\sprite34.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -699,6 +715,14 @@
             "Value": {
                 "id": "511e2b6e-473c-4d46-8bbd-e412db389967",
                 "resourcePath": "sprites\\sprSwordHitbox\\sprSwordHitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dff1c7b0-3c0c-4f53-8eaa-d1c7ed9f8dcd",
+            "Value": {
+                "id": "c731f6eb-2ee6-4dd4-9ce3-6b87e9b17c5e",
+                "resourcePath": "sprites\\sprHealthPickUp\\sprHealthPickUp.yy",
                 "resourceType": "GMSprite"
             }
         },
