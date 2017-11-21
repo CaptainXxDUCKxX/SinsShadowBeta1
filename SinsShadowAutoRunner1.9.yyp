@@ -303,14 +303,6 @@
             }
         },
         {
-            "Key": "6fd33657-8829-43a6-af4d-bd010fc4da4c",
-            "Value": {
-                "id": "0e0ed034-bfc3-4727-b435-ecd5c220f087",
-                "resourcePath": "objects\\objMovingPlatform\\objMovingPlatform.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "721e3205-bf77-4e61-a55d-070c95a9a805",
             "Value": {
                 "id": "dd8dee2a-c296-4961-9e55-12400e54d7b4",
@@ -548,6 +540,14 @@
                 "id": "fa31085a-f149-4294-a14e-636acd2c8fd0",
                 "resourcePath": "sprites\\spr_GUI\\spr_GUI.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b9f402d4-0c44-49f9-af48-a360621c194e",
+            "Value": {
+                "id": "7eb9b8bf-7ad6-4732-831b-d3ea47216c69",
+                "resourcePath": "objects\\objMovingPlatformPhys\\objMovingPlatformPhys.yy",
+                "resourceType": "GMObject"
             }
         },
         {
