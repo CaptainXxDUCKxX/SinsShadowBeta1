@@ -1,4 +1,4 @@
- /////STEP\\\\\
+/////STEP\\\\\
 
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) || (gamepad_button_check_pressed(0, gp_face3)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
@@ -27,7 +27,7 @@ if(keyboard_check_released(vk_up)) && (active == true) || (gamepad_button_check_
 
 /// PLAYER MOVEMENT /////
 if(hspeed == 0) sprite_index = sprIdle;
-if (keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
+if(keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
 {
 	image_xscale = 1;
 	physics_apply_force(x, y, 510, 0);
@@ -49,7 +49,7 @@ if (keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_
 	}
 }
 
-if (keyboard_check(ord("A"))) || (gamepad_button_check(0, gp_padl)) || (gamepad_axis_value(0,gp_axislh) < -0.1)
+if(keyboard_check(ord("A"))) || (gamepad_button_check(0, gp_padl)) || (gamepad_axis_value(0,gp_axislh) < -0.1)
 {
 	image_xscale = -1;
 	physics_apply_force(x, y, -510, 0);
@@ -103,7 +103,6 @@ if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr)) && keyboar
 
 //Used to see if the space key has been released since last successful jump
 if(keyboard_check_released(vk_space)) || (gamepad_button_check_released(0, gp_face1))
-
 {
 	bUnspaced = true;
 }
@@ -120,7 +119,7 @@ else
 }
 
 //Jump only under appropriate conditions for Keyboard
-if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14 
+if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
 {
 	bUnspaced = false;
 	physics_apply_impulse(x, y, 0, -460);
@@ -144,6 +143,7 @@ if(gamepad_button_check(0, gp_face1)) && bUnspaced == true && bOnGround == true 
 	//sprite_index = sprJump;
 	//image_index = 
 }
+
 //display correct sprite while jumping
 if bJumping == true
 {

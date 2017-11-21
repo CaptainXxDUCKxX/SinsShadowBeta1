@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "557aa928-fc48-4ce6-9a52-aae0b0de2443",
+            "Value": {
+                "id": "1a1cb384-45a4-4f5e-ab41-c73fbebf7fd9",
+                "resourcePath": "objects\\objWinTrig\\objWinTrig.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "58d22d3e-5baf-4b45-81df-e62fe89e15a0",
             "Value": {
                 "id": "cc6cc02f-539e-4f79-b1df-5cc41a249cd9",
