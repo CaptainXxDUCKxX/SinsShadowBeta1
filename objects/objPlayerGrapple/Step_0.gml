@@ -25,7 +25,7 @@ if(keyboard_check_released(vk_up)) && (active == true) || (gamepad_button_check_
 	
 }
 
-/// PLAYER MOVEMENT /////
+///// PLAYER MOVEMENT /////
 if(hspeed == 0) sprite_index = sprIdle;
 
 if (keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
