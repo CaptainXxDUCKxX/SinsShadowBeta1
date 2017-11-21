@@ -1,7 +1,12 @@
  /////STEP\\\\\
 
 // INHERIT MOVING PLATFORM MOVEMENT 
-event_inherited();
+//event_inherited();
+if place_meeting(x, y+5, objMovingPlatformPhys)
+{
+	show_debug_message("Hi HOOOOOOOOOOO");
+}
+//phy_speed_x = -2;
 
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) || (gamepad_button_check_pressed(0, gp_face3)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
@@ -81,6 +86,27 @@ if(active == true) && (hspeed == 0)
 
 if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;
 
+
+if position_meeting(x,y, objMovingPlatformPhys) 
+  {
+	  //path_start(pathMovingPlatform, iPlatformSpeed, path_action_restart, 0);
+	  //gravity:=0;
+	  //vspeed:=0;
+	  //hspeed = other.hspeed;
+  }
+
+/*
+if position_meeting(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
+  {
+  objID=instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
+  hspeed = objID.hspeed;
+  }
+else
+  {
+  hspeed:=0;
+  }
+*/      
+	     
 /// Slide Dash/Dodge Code. She can apply the force in the air for some reason... 
 
 //Fix Application of force when vk_down is pressed in air
@@ -112,7 +138,7 @@ if(keyboard_check_released(vk_space)) || (gamepad_button_check_released(0, gp_fa
 }
 
 //Check to see if player is on the ground
-if(place_meeting(x,y+5,objCollisionPhys))
+if(place_meeting(x,y+5,objCollisionPhys) or place_meeting(x,y+5,objMovingPlatformPhys))
 {
 	bOnGround = true;
 	bJumping = false;
@@ -175,12 +201,12 @@ if (iCurrentHP <= 0)
 	instance_destroy(objPlayerGrapple);
 	game_restart();
 } 
-
+/*
 if place_meeting(x, y, objMovingPlatform) 
 {
 	
 }
-
+*/
 //Bat attack cooldown
 /*
 if alarm_get(0) <= 0
