@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0575bf3b-1f67-4f6d-b5b1-239af8b59850",
+            "Value": {
+                "id": "c79b9c2c-7557-4757-ae7d-885ccc23b02f",
+                "resourcePath": "scripts\\scrGrapple\\scrGrapple.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "057d9e7e-493a-4bd9-a0a7-71da6e8689a7",
             "Value": {
                 "id": "bde7308b-b4f5-4352-b040-06f7f4adcdb2",
@@ -204,6 +212,14 @@
                 "id": "d76384fa-6abc-4cd2-a655-929af0f613f8",
                 "resourcePath": "rooms\\rmWinScreen\\rmWinScreen.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "51a537f9-2e85-40bb-9536-d0f88b12fad5",
+            "Value": {
+                "id": "3f1ef012-3f92-48c7-870e-fe0b46cf4b7d",
+                "resourcePath": "scripts\\scrMovement\\scrMovement.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -418,7 +434,7 @@
             "Key": "98fe68ff-ab2b-49c8-b5aa-66d6fbbe4074",
             "Value": {
                 "id": "adbabe05-681b-4748-b380-1d3fbab9b310",
-                "resourcePath": "sprites\\sprite34\\sprite34.yy",
+                "resourcePath": "sprites\\sprFall2\\sprFall2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -832,7 +848,8 @@
         }
     ],
     "script_order": [
-        
+        "0575bf3b-1f67-4f6d-b5b1-239af8b59850",
+        "51a537f9-2e85-40bb-9536-d0f88b12fad5"
     ],
     "tutorial": ""
 }
