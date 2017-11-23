@@ -7,7 +7,7 @@
 
 
 
-if keyboard_check_pressed(vk_escape) game_end();
+if keyboard_check_pressed(vk_escape) || (gamepad_button_check_pressed(0, gp_select)) game_end();
 if keyboard_check_pressed(vk_enter) room_goto_next();
 if keyboard_check_pressed(vk_f2) room_restart();
 if keyboard_check_pressed(vk_f1)|| (gamepad_button_check_pressed(0, gp_start)) game_restart();
