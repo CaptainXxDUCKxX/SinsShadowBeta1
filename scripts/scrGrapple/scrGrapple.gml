@@ -9,16 +9,25 @@ if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (dist
 	instNearestGP = instance_nearest(x, y, objGrappleBlock);
 	jointGrapple = physics_joint_rope_create(objPlayerGrapple, instNearestGP, (objPlayerGrapple.x + 9), (objPlayerGrapple.y - 41), instNearestGP.x, instNearestGP.y, 100, true); 
 	bJumping = false;
-	/*
+	
+/// code to get momentum-based swinging physics	///
+// if movement is stopped, making it harder to apply force
+	if (hspeed == 0)
+	{
+		phy_linear_damping -= phy_linear_damping; 
+	} 
+
+/*
 	if instNearestGP.y < y
 	{
 		mx = instNearestGP.x;
 		my = instNearestGP.y;*/
-		if(distance_to_object(objGrappleBlock) > iGrappleRadius) 
-		{ 
-			active = false;
-		}
+	if(distance_to_object(objGrappleBlock) > iGrappleRadius) 
+	{ 
+		active = false;
 	}
+	
+}
 //}
 
 if(keyboard_check_released(vk_up)) && (active == true)
