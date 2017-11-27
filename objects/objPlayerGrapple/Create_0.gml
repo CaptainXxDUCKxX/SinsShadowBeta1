@@ -1,6 +1,6 @@
 ///////CREATE\\\\\\\\
 
-// GRAPPLE VARIABLES 
+/// GRAPPLE VARIABLES ///
 active = false;
 iGrappleRadius = 150;
 instNearestGP = objGrappleBlock; 
@@ -45,6 +45,7 @@ bUnspaced = true; //is the spacebar being held down
 bOnGround = false; //is Amelia on the ground
 bJumpImpulseSwitch = true; //"true" meaning "can jump"
 bJumping = false;
+bStillFalling = false;
 
 //physics collision
 phys_x = phy_position_x

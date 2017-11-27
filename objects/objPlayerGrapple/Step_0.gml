@@ -1,4 +1,4 @@
-  /////STEP\\\\\
+ /////STEP\\\\\
 
 // INHERIT MOVING PLATFORM MOVEMENT 
 //event_inherited();
@@ -9,88 +9,9 @@ if place_meeting(x, y+5, objMovingPlatformPhys)
 
 //phy_speed_x = -2;
 
-///// Grapple functionality /////
-// The iGrappleRadius variable seems to be a bit janky. She can grapple when she's near an instance of objGrappleBlock, but she does not grapple the nearest one
-// only the first one
-// it doesn't matter what instance layer the Grapple Point is on, either 
-// Need to figure out why it's only drawing the physics joint rope on that singular objGrappleBlock... 
-if(keyboard_check_pressed(vk_up)) || (gamepad_button_check_pressed(0, gp_face3)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
-{
-	active = true;
-	instNearestGP = instance_nearest(x, y, objGrappleBlock);
-	jointGrapple = physics_joint_rope_create(objPlayerGrapple, instNearestGP, (objPlayerGrapple.x + 9), (objPlayerGrapple.y - 41), instNearestGP.x, instNearestGP.y, 100, true); 
-	bJumping = false;
-	/*
-	if instNearestGP.y < y
-	{
-		mx = instNearestGP.x;
-		my = instNearestGP.y;*/
-		if(distance_to_object(objGrappleBlock) > iGrappleRadius) 
-		{ 
-			active = false;
-		}
-	}
-//}
+scrGrapple ();
 
-if(keyboard_check_released(vk_up)) && (active == true)|| (gamepad_button_check_released(0, gp_face3)) && (active == true)
-{
-	physics_joint_delete(jointGrapple);
-	active = false;
-	
-}
-
-///// PLAYER MOVEMENT /////
-if(hspeed == 0) sprite_index = sprIdle;
-if(keyboard_check(ord("D"))) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
-{
-	image_xscale = 1;
-	physics_apply_force(x, y, 280, 0);
-	hspeed = 3;
-	sprite_index= sprWalk; 
-	if(active == true)
-	{
-		physics_apply_angular_impulse(100);
-		sprite_index = sprAmeliaSwing;
-	}
-	if(keyboard_check(vk_down)) || (gamepad_button_check(0, gp_shoulderr))
-	{
-		bCanSlide = true;
-		tStopSlide = 2;
-		bUnspaced = false;
-		bOnGround = true;
-		//physics_apply_force(x,y,580,0);
-		sprite_index = sprSlide; 
-	}
-}
-
-if(keyboard_check(ord("A"))) || (gamepad_button_check(0, gp_padl)) || (gamepad_axis_value(0,gp_axislh) < -0.1)
-{
-	image_xscale = -1;
-	physics_apply_force(x, y, -280, 0);
-	hspeed = -3;
-	sprite_index = sprWalk;
-	if(active == true)
-	{
-		physics_apply_angular_impulse(-100);
-		sprite_index = sprAmeliaSwing;
-	}
-	if(keyboard_check(vk_down)) || (gamepad_button_check(0, gp_shoulderr))
-	{
-		bCanSlide = true; 
-		tStopSlide = 2;
-		bUnspaced = false;
-		bOnGround = true;
-		//physics_apply_force(x,y,-580,0);
-		sprite_index = sprSlide; 
-	}
-}
-
-if(active == true) && (hspeed == 0)
-{
-	sprite_index = sprHang; 
-}	
-
-if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;
+scrMovement ();
 
 
 if position_meeting(x,y, objMovingPlatformPhys) 
@@ -116,16 +37,17 @@ else
 /// Slide Dash/Dodge Code. She can apply the force in the air for some reason... 
 
 //Fix Application of force when vk_down is pressed in air
-//limit the usage of slide dash to be much shorter; it can be used infinitely, given Amelia has stamina
-if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr)) && keyboard_check(ord("D")) && iCurrentStamina > 14  
+//limit the usage of slide dash to be much shorter;
+//it can be used infinitely, given Amelia has stamina
+if keyboard_check(vk_down) && keyboard_check(ord("D")) && iCurrentStamina > 14
 {
 	bUnspaced = true;
 	iCurrentStamina -= 1; 
 	physics_apply_force(x,y,1000,0);
 	sprite_index = sprSlide;
 }
-if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr))&& keyboard_check(ord("A")) && iCurrentStamina > 14  
 
+if keyboard_check(vk_down) && keyboard_check(ord("A")) && iCurrentStamina > 14
 {
 	bUnspaced = true;
 	iCurrentStamina -= 1; 
@@ -134,10 +56,23 @@ if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr))&& keyboard
 }
 
 
+//physics collision events
+phys_x = phy_position_x
+phys_y = phy_position_y
+
+//if Amelia Dies
+if (objPlayerGrapple.y >= 1200) iCurrentHP = 0; 
+
+if (iCurrentHP <= 0) 
+{
+	instance_destroy(objPlayerGrapple);
+	game_restart();
+} 
+
 /////// JUMP CONDITIONS AND FUNCTIONALITY //////
 
 //Used to see if the space key has been released since last successful jump
-if(keyboard_check_released(vk_space)) || (gamepad_button_check_released(0, gp_face1))
+if(keyboard_check_released(vk_space))
 {
 	bUnspaced = true;
 }
@@ -153,60 +88,81 @@ else
 	bOnGround = false;
 }
 
-//Jump only under appropriate conditions for Keyboard
+//Jump only under appropriate conditions
 if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
 {
 	bUnspaced = false;
 	physics_apply_impulse(x, y, 0, -220);
 	iCurrentStamina -= 15;
 	bJumping = true;
-	///Jump functionality (pre-physics)///
-	//vspeed += -15;
-	//sprite_index = sprJump;
-	//image_index = 
-}
-
-//Jump only under appropriate conditions for Controller
-if(gamepad_button_check(0, gp_face1)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
-{
-	bUnspaced = false;
-	physics_apply_impulse(x, y, 0, -220);
-	iCurrentStamina -= 15;
-	bJumping = true;
-	///Jump functionality (pre-physics)///
-	//vspeed += -15;
-	//sprite_index = sprJump;
-	//image_index = 
+			///Jump functionality (pre-physics)///
+			//vspeed += -15;
+			//sprite_index = sprJump;
+			//image_index = 
 }
 
 //display correct sprite while jumping
+// attempting to put the proper fall animation in here as well
+// STILL NOT WORKING 
 if bJumping == true
 {
 	if phy_linear_velocity_y <= 0
 		sprite_index = sprJump;
 	if phy_linear_velocity_y > 0
 		sprite_index = sprFall;
+		if sprite_index == sprFall && image_index >= 5 && image_index < 5
+		{
+			sprite_index = sprFall2; 
+		}
+}
+
+
+/// Attempting to get the correct animation for the Idle Jump
+// this is hard... 
+
+if bJumping == true && hspeed == 0
+{
+	if phy_linear_velocity_y <= 0
+		sprite_index = sprJump;
+	if phy_linear_velocity_y > 0	
+		sprite_index = sprFall2;
+} 
+
+// if Jumping, NOT on ground, and STILL falling, then "bStillFalling" == true (we kinda got this)
+//IT WORKS THE FIRST TIME THROUGH!
+// The Current problem is it only does it ONCE... why... doesn't it repeat. . . . .
+
+/*
+if bJumping == true && bOnGround == false && image_index >= 3 && active == false; 
+{
+	bStillFalling = true;	
 }
 
 //display correct sprite while falling
-if active == false && phy_linear_velocity_y > 0 && bOnGround == false
+if phy_linear_velocity_y > 0 && bOnGround == false && active == false && bStillFalling == true
 {
-	sprite_index = sprFall;
+	sprite_index = sprFall2; 
 }
+*/
+
+/*
+if bOnGround == false
+{
+	//draw_sprite (sprFall, image_index (3, 4), x, y);
+	sFalling = true;
+	image_index >= ;
+}
+	if (sFalling == true) && phy_linear_velocity_y > 0
+	{
+		//sprite_index = sprFall; 
+		image_index > 3; 
+	}
+*/
+
+
+
 //show_debug_message(bJumping);
 
-//physics collision events
-phys_x = phy_position_x
-phys_y = phy_position_y
-
-//if Amelia Dies
-if (objPlayerGrapple.y >= 1200) iCurrentHP = 0; 
-
-if (iCurrentHP <= 0) 
-{
-	instance_destroy(objPlayerGrapple);
-	room_goto(rmDeathScreen);
-} 
 /*
 if place_meeting(x, y, objMovingPlatform) 
 {
