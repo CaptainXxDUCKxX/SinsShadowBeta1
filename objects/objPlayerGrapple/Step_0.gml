@@ -1,12 +1,6 @@
  /////STEP\\\\\
 
-// INHERIT MOVING PLATFORM MOVEMENT 
-//event_inherited();
-if place_meeting(x, y+5, objMovingPlatformPhys)
-{
-	show_debug_message("Hi HOOOOOOOOOOO");
-}
-//phy_speed_x = -2;
+
 
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
@@ -34,7 +28,7 @@ if(keyboard_check_released(vk_up)) && (active == true)
 }
 
 /// PLAYER MOVEMENT /////
-if(hspeed == 0) sprite_index = sprIdle;
+//if(hspeed == 0) sprite_index = sprIdle;
 if(keyboard_check(ord("D")))
 {
 	image_xscale = 1;
@@ -84,28 +78,7 @@ if(active == true) && (hspeed == 0)
 	sprite_index = sprHang; 
 }	
 
-if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;
-
-
-if position_meeting(x,y, objMovingPlatformPhys) 
-  {
-	  //path_start(pathMovingPlatform, iPlatformSpeed, path_action_restart, 0);
-	  //gravity:=0;
-	  //vspeed:=0;
-	  //hspeed = other.hspeed;
-  }
-
-/*
-if position_meeting(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
-  {
-  objID=instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
-  hspeed = objID.hspeed;
-  }
-else
-  {
-  hspeed:=0;
-  }
-*/      
+if(!keyboard_check(ord("A"))) && !keyboard_check(ord("D")) hspeed = 0;    
 	     
 /// Slide Dash/Dodge Code. She can apply the force in the air for some reason... 
 
@@ -129,6 +102,7 @@ if keyboard_check(vk_down) && keyboard_check(ord("A")) && iCurrentStamina > 14
 
 
 /////// JUMP CONDITIONS AND FUNCTIONALITY //////
+
 
 //Used to see if the space key has been released since last successful jump
 if(keyboard_check_released(vk_space))
@@ -174,7 +148,6 @@ if active == false && phy_linear_velocity_y > 0 && bOnGround == false
 {
 	sprite_index = sprFall;
 }
-//show_debug_message(bJumping);
 
 //physics collision events
 phys_x = phy_position_x
@@ -188,96 +161,36 @@ if (iCurrentHP <= 0)
 	instance_destroy(objPlayerGrapple);
 	game_restart();
 } 
-/*
-if place_meeting(x, y, objMovingPlatform) 
-{
-	
-}
-*/
-//Bat attack cooldown
-/*
-if alarm_get(0) <= 0
-	{
-	bCanTakeDamage = 1;
-	}
-	
-if bGotHit = 1
-{
-	bGotHit = 0;
-	alarm_set(0, iDamageBuffer);
-}
-*/
-
-
-/*
-/// FACE DIRECTION OF MOVEMENT    
-if (x < iPrevFrameX)
-	{
-		image_xscale = -1;
-	}
-else if (x > iPrevFrameX)
-	{
-		image_xscale = 1;
-	}
-iPrevFrameX = x;
-*/
 
 //Attack isn't working, and hitbox isn't aligned with the Sword; 
 //We'll have to change that functionality anyways, since we're taking the sword
 //off of Amelia's sprite
 
-
-/// ATTACK 
-if(mouse_check_button(mb_left)){
-	sprite_index = sprSwordAtk; 
-	image_index = -1;
-	var xdiff = x - xprevious;
-
-	if(!(xdiff = 0)){
-		deltax = xdiff;
-	}
-	instance_create_layer(x+20,y,"Player",objSwordHitbox);
-	if(image_index >= 7) && (mouse_check_button_released(mb_left)){
-		image_speed = 0;
-		sprite_index = sprIdle;
-	}
-	else {
-		sprite_index = sprSwordAtk;
-	}
-	//audio_play_sound(sndSlashAttack, 5, false);
-	}
-
-
-/*
+//show_debug_message(ceil(image_index));
+//show_debug_message(image_number - 1);
 if(mouse_check_button_pressed(mb_left))
 {
- sprite_index = sprSwordAtk; 
- image_index = -1;
- var xdiff = x - xprevious;
- audio_play_sound(sndSlashAttack, 5, false);
- if(!(xdiff = 0))
- {
-  deltax = xdiff; 
- }
- instance_create_layer(x+20,y,"Player",objSwordHitbox);
- if(image_index >= 7) && (mouse_check_button_released(mb_left))
- {
-  image_speed = 0;
-  sprite_index = sprIdle;
- }
+	bAttackAnim = true;
+	sprite_index = sprSwordAtk; 
+	audio_play_sound(sndSlashAttack, 5, false);
+	if image_xscale == 1
+	{
+	instance_create_layer((x+20),y,"Player",objSwordHitbox);
+	}
+	if image_xscale == -1
+	{
+	instance_create_layer((x-50),y,"Player",objSwordHitbox);
+	}
 }
 else
 {
- sprite_index = sprIdle;
+	if ceil(image_index) >= image_number
+	{
+		sprite_index = sprIdle;
+	}
 }
-*/
 
 
-/*
-if(iAttackTimer > 1){
-	attack = true; 
-}
-*/
 
 
 ///// DEBUG MESSAGES /////

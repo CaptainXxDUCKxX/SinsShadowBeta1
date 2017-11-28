@@ -10607,8 +10607,8 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_498DBBFA",
-                    "x": 96,
-                    "y": 512,
+                    "x": 3488,
+                    "y": 448,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295
@@ -10690,7 +10690,7 @@
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_1587907D",
                     "objId": "b9f402d4-0c44-49f9-af48-a360621c194e",
-                    "rotation": 0,
+                    "rotation": 0.205966949,
                     "scaleX": 1,
                     "scaleY": 1
                 },

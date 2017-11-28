@@ -16,10 +16,12 @@ phy_rotation = 0;
 phy_fixed_rotation = true;
 
 // ATTACK VARIABLES
+attacking = mouse_check_button_pressed(mb_left);
 attack = false;
 iAttackTimer = 2;
 alarm[2] = iAttackTimer;
 canAttack = true;
+bAttackAnim = false;
 
 
 iPrevFrameX = 0;
