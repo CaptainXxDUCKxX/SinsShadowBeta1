@@ -19,7 +19,7 @@ if position_meeting(x,y, objMovingPlatformPhys)
 	  //path_start(pathMovingPlatform, iPlatformSpeed, path_action_restart, 0);
 	  //gravity:=0;
 	  //vspeed:=0;
-	  //hspeed = other.hspeed;
+	  //hs peed = other.hspeed;
   }
 
 /*
@@ -159,7 +159,36 @@ if bOnGround == false
 	}
 */
 
+//pseudo for timeout animation:
+//if hspeed == 0 && vpseed == 0 && ((x amount of time has passed))) bDoingNothing = true;
+//else bDoingNothing = false;
+//if bDoingNothing = true {sprite_index = sprTimeout ((only one time through until another x 
+//amount of time has passed));}
 
+if (hspeed == 0)
+	{
+	sprite_index = sprIdle;
+	}
+
+if (hspeed == 0 && vspeed == 0 && alarm [3] = -1)
+{
+	bDoingNothing = true;
+	alarm [3] = (room_speed * 5);
+}
+
+/*
+else bDoingNothing = false;
+
+if (bDoingNothing = false)
+{
+	sprite_index = sprIdle;
+}
+
+if (bDoingNothing = true)
+{
+	sprite_index = sprTimeout;
+}
+*/
 
 //show_debug_message(bJumping);
 

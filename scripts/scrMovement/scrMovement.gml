@@ -1,5 +1,5 @@
 ///// PLAYER MOVEMENT /////
-if(hspeed == 0) sprite_index = sprIdle;
+//if(hspeed == 0) sprite_index = sprIdle;
 if(keyboard_check(ord("D")))
 {
 	image_xscale = 1;
