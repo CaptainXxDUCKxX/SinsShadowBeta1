@@ -23,12 +23,12 @@ if position_meeting(x,y, objMovingPlatformPhys)
 /*
 if position_meeting(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
   {
-  objID=instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
-  hspeed = objID.hspeed;
+	  objID=instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,objMovingPlatformPhys)
+	  hspeed = objID.hspeed;
   }
 else
   {
-  hspeed:=0;
+	hspeed := 0;
   }
 */      
 	     
@@ -76,7 +76,7 @@ if(keyboard_check_released(vk_space))
 }
 
 //Check to see if player is on the ground
-if(place_meeting(x,y+5,objCollisionPhys) or place_meeting(x,y+5,objMovingPlatformPhys))
+if(place_meeting(x,y+5,objCollisionPhys) or place_meeting(x,y+5,objMovingPlatformPhys)) or place_meeting(x, y, objCollisionPhysHALFTOP) or place_meeting(x, y, objCollisionPhysHALF)
 {
 	bOnGround = true;
 	bJumping = false;
@@ -87,11 +87,11 @@ else
 }
 
 //Jump only under appropriate conditions
-if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurrentStamina > 14
+if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true 
 {
 	bUnspaced = false;
-	physics_apply_impulse(x, y, 0, -220);
-	iCurrentStamina -= 15;
+	physics_apply_impulse(x, y, 0, -280);
+	//iCurrentStamina -= 15; Turning off the usage of Stamina with jumping
 	bJumping = true;
 			///Jump functionality (pre-physics)///
 			//vspeed += -15;
