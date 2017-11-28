@@ -23,7 +23,7 @@ alarm[2] = iAttackTimer;
 
 iPrevFrameX = 0;
 
-// HP
+// HP // 
 iCurrentHP = 100;
 iMaxHP = 100;
 
