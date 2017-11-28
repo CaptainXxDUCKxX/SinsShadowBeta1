@@ -1,6 +1,6 @@
 //HIT THAT BAT
 
-hit = instance_place   (x, y, objBat && objBat1 && objBat2);
+hit = instance_place   (x, y, objBat);
 
 if (hit != noone)
 	{
@@ -8,4 +8,4 @@ if (hit != noone)
 	instance_destroy ();
 	}
 	
- image_xscale = other.image_xscale; 
+//image_xscale = other.image_xscale; 

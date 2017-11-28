@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "79d062bf-78c6-4ae2-9e0b-17a2cc20f0e0",
+            "Value": {
+                "id": "e3cac8a2-5eea-44c2-9d89-d7af5de1f9c2",
+                "resourcePath": "sprites\\sprHalfCollisionDown\\sprHalfCollisionDown.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "79fef617-cd6c-4f17-bb2e-8af15801582a",
             "Value": {
                 "id": "c0256d57-7806-4a7d-9f58-979ebb0cc90c",
@@ -804,6 +812,14 @@
                 "id": "633c6f46-e116-4527-ae32-79ae1696a04a",
                 "resourcePath": "views\\efaaa198-17d9-4696-a64e-26518f69e0b9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f0b91796-54b7-4a01-9fbf-c662913dc295",
+            "Value": {
+                "id": "09724535-4ce4-43a0-8fd0-b732adfef448",
+                "resourcePath": "objects\\objCollisionPhysHALFTOP\\objCollisionPhysHALFTOP.yy",
+                "resourceType": "GMObject"
             }
         },
         {

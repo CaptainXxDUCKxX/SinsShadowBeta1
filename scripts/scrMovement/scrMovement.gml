@@ -6,9 +6,10 @@ if(keyboard_check(ord("D")))
 	physics_apply_force(x, y, 310, 0);
 	hspeed = 3;
 	sprite_index= sprWalk; 
-	if(active == true)
+	if(active == true) && (keyboard_check(ord("D")))
 	{
-		physics_apply_angular_impulse(100);
+		physics_apply_angular_impulse(fForceStrength);
+		fForceStrength -= 1;
 		sprite_index = sprAmeliaSwing;
 	}
 	if(keyboard_check(vk_down))
@@ -21,6 +22,8 @@ if(keyboard_check(ord("D")))
 		sprite_index = sprSlide; 
 	}
 }
+
+show_debug_message(fForceStrength);
 
 if(keyboard_check(ord("A")))
 {

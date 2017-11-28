@@ -11,4 +11,4 @@ draw_sprite_stretched_ext(spr_HealthBar, 0, iHUDX + 72, iHUDY + 25, (273/(objPla
 
 //Debug messages
 //show_debug_message("x: " + string(mouse_x - iHUDX));
-//show_debug_message("y: " + string(mouse_y - iHUDY));
+//show_debug_message("y: " + string(mouse_y - iHUDY));          
