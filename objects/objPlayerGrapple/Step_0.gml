@@ -113,6 +113,10 @@ if bJumping == true
 		}
 }
 
+if(active == true) && bUnspaced == true
+{
+	physics_apply_angular_impulse(100);
+}
 
 /// Attempting to get the correct animation for the Idle Jump
 // this is hard... 
@@ -125,14 +129,6 @@ if bJumping == true && hspeed == 0
 	if phy_linear_velocity_y > 0	
 		sprite_index = sprFall2;
 } 
-
-if bIsOnHalf == true && keyboard_check_pressed(vk_down)
-{
-	bIsOnHalf = false; 
-	physics_apply_impulse(x, y, 0, 220);
-}
-
-
 
 // if Jumping, NOT on ground, and STILL falling, then "bStillFalling" == true (we kinda got this)
 //IT WORKS THE FIRST TIME THROUGH!
