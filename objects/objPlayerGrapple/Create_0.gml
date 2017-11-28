@@ -16,7 +16,7 @@ physics_fixture_set_circle_shape(fixtureAmelia, 5);
 phy_rotation = 0;
 phy_fixed_rotation = true;
 
-// ATTACK VARIABLES
+/// ATTACK VARIABLES
 attack = false;
 iAttackTimer = 2;
 alarm[2] = iAttackTimer;

@@ -101,7 +101,6 @@ if(keyboard_check(vk_space)) && bUnspaced == true && bOnGround == true && iCurre
 
 //display correct sprite while jumping
 // attempting to put the proper fall animation in here as well
-// STILL NOT WORKING 
 if bJumping == true
 {
 	if phy_linear_velocity_y <= 0
@@ -117,6 +116,7 @@ if bJumping == true
 
 /// Attempting to get the correct animation for the Idle Jump
 // this is hard... 
+// FUCK
 
 if bJumping == true && hspeed == 0
 {
@@ -125,6 +125,14 @@ if bJumping == true && hspeed == 0
 	if phy_linear_velocity_y > 0	
 		sprite_index = sprFall2;
 } 
+
+if bIsOnHalf == true && keyboard_check_pressed(vk_down)
+{
+	bIsOnHalf = false; 
+	physics_apply_impulse(x, y, 0, 220);
+}
+
+
 
 // if Jumping, NOT on ground, and STILL falling, then "bStillFalling" == true (we kinda got this)
 //IT WORKS THE FIRST TIME THROUGH!
