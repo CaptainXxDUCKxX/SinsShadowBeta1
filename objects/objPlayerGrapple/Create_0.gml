@@ -3,9 +3,10 @@
 /// GRAPPLE VARIABLES ///
 active = false;
 iGrappleRadius = 150;
-instNearestGP = objGrappleBlock; 
+instNearestGP = objGrappleBlock;
+fForceStrength = 10.0;
 //mx = instNearestGP.x; // hook x coordinates
-//my = instNearestGP.y; // hook y coordinates 
+//my = instNearestGP.y; // hook y coordinates
 
 // PHYSICS VARIABLES
 fixtureAmelia = physics_fixture_create();

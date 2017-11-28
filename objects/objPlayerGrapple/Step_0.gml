@@ -10,9 +10,7 @@ if place_meeting(x, y+5, objMovingPlatformPhys)
 //phy_speed_x = -2;
 
 scrGrapple ();
-
 scrMovement ();
-
 
 if position_meeting(x,y, objMovingPlatformPhys) 
   {
