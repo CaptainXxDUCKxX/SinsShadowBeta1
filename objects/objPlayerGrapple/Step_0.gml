@@ -124,7 +124,7 @@ if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr)) && keyboar
 	physics_apply_force(x,y,1000,0);
 	sprite_index = sprSlide;
 }
-if keyboard_check(vk_down) || (gamepad_button_check(0, gp_shoulderr))&& keyboard_check(ord("A")) && iCurrentStamina > 14  
+if keyboard_check(vk_down)|| (gamepad_button_check(0, gp_shoulderr))&& keyboard_check(ord("A")) && iCurrentStamina > 14  
 
 {
 	bUnspaced = true;

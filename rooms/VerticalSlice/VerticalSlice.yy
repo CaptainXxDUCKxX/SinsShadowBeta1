@@ -283,7 +283,8 @@
         "3861933d-d1ea-40c3-9589-4b1138f5943c",
         "8b84ac79-3d4c-402c-a94a-46a06e0ca952",
         "7a877398-c613-4b7a-aa98-4676b1646881",
-        "6203a1a7-eda3-47e0-8c72-33dfe1dce9fa"
+        "6203a1a7-eda3-47e0-8c72-33dfe1dce9fa",
+        "9181081c-7b64-4de3-85b3-395267c6f820"
     ],
     "layers": [
         {
@@ -10602,8 +10603,8 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_498DBBFA",
-                    "x": 3488,
-                    "y": 448,
+                    "x": 1792,
+                    "y": 512,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295
@@ -10674,7 +10675,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_2C15BC08",
-                    "x": 352,
+                    "x": 864,
                     "y": 480,
                     "IsDnD": false,
                     "colour": {
@@ -10685,6 +10686,30 @@
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_2C15BC08",
                     "objId": "0968bf4a-82e0-4849-8059-b3042e2b1d16",
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "id": "9181081c-7b64-4de3-85b3-395267c6f820",
+                    "modelName": "GMRInstance",
+                    "mvc": "1.0",
+                    "ignore": false,
+                    "inheritItemSettings": false,
+                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
+                    "m_serialiseFrozen": false,
+                    "name": "inst_7711EA7E",
+                    "x": 1856,
+                    "y": 480,
+                    "IsDnD": false,
+                    "colour": {
+                        "Value": 4294967295
+                    },
+                    "creationCodeFile": "InstanceCreationCode_inst_7711EA7E.gml",
+                    "creationCodeType": ".gml",
+                    "inheritCode": false,
+                    "name_with_no_file_rename": "inst_7711EA7E",
+                    "objId": "557aa928-fc48-4ce6-9a52-aae0b0de2443",
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
