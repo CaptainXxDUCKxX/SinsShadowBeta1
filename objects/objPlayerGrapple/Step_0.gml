@@ -1,7 +1,5 @@
  /////STEP\\\\\
 
-
-
 ///// Grapple functionality /////
 if(keyboard_check_pressed(vk_up)) && (instance_exists(objGrappleBlock)) && (distance_to_object(objGrappleBlock) < iGrappleRadius)
 {
@@ -190,11 +188,3 @@ else
 	}
 }
 
-
-
-
-///// DEBUG MESSAGES /////
-//show_debug_message("bJumpImpulseSwitch: " + string(bJumpImpulseSwitch));
-//show_debug_message("bOnGround: " + string(bOnGround));
-//show_debug_message("bUnspaced: " + string(bUnspaced));
-//show_debug_message(iCurrentHP);

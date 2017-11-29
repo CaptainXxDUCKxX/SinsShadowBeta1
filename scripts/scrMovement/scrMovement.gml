@@ -1,6 +1,6 @@
 ///// PLAYER MOVEMENT /////
 if(hspeed == 0) sprite_index = sprIdle;
-if(keyboard_check(ord("D")))
+if(keyboard_check(ord("D"))) or (keyboard_check(vk_right))
 {
 	image_xscale = 1;
 	physics_apply_force(x, y, 310, 0);

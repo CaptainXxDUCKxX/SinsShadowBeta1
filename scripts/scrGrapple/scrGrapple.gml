@@ -1,4 +1,4 @@
-///// Grapple functionality /////
+ ///// Grapple functionality /////
 // The iGrappleRadius variable seems to be a bit janky. She can grapple when she's near an instance of objGrappleBlock, but she does not grapple the nearest one
 // only the first one
 // it doesn't matter what instance layer the Grapple Point is on, either 
