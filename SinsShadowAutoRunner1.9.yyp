@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "31a16529-25fc-4f1f-9b44-3043988fc0a5",
+            "Value": {
+                "id": "6c117b2e-5388-421b-961f-d2bf45a101b8",
+                "resourcePath": "views\\31a16529-25fc-4f1f-9b44-3043988fc0a5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "320fe06b-08d8-4b50-9a18-9b6faf793373",
             "Value": {
                 "id": "89e3a2f7-9fa3-43de-bc60-50215d64ef73",
@@ -183,6 +191,14 @@
             }
         },
         {
+            "Key": "39849d8a-f81f-4081-b140-ce87ed8b363b",
+            "Value": {
+                "id": "9aa19de3-6871-4cea-8fdb-b2c2e8da749c",
+                "resourcePath": "sprites\\sprite36\\sprite36.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3c65baba-ef75-4ac5-a830-b039d53beb90",
             "Value": {
                 "id": "587c9b9a-7c3b-4ae4-895e-63d9c1315e4c",
@@ -196,6 +212,14 @@
                 "id": "d8e930c6-5db3-4e00-baf5-7b181f734c51",
                 "resourcePath": "objects\\objWinTrig\\objWinTrig.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "461a0257-a8ac-4d41-afb8-5a56985ce90c",
+            "Value": {
+                "id": "e976c434-27ba-4d53-b4ee-cbab86c2738e",
+                "resourcePath": "sprites\\sprAmeliaGrapple\\sprAmeliaGrapple.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

@@ -1,4 +1,4 @@
-///////CREATE\\\\\\\\
+ ///////CREATE\\\\\\\\
 
 // GRAPPLE VARIABLES 
 active = false;
@@ -49,6 +49,11 @@ bUnspaced = true; //is the spacebar being held down
 bOnGround = false; //is Amelia on the ground
 bJumpImpulseSwitch = true; //"true" meaning "can jump"
 bJumping = false;
+
+//TIMEOUT ANIMATION
+//sprite_index = sprTimeout;
+bDoingNothing = false;
+alarm [3] = (room_speed * 5);
 
 //physics collision
 phys_x = phy_position_x
