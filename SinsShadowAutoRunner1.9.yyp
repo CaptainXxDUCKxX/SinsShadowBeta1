@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "5eb5c5c0-8adf-4e34-ae99-acbc53184f0d",
+            "Value": {
+                "id": "c7866873-7b19-4c48-8558-fcd753a88a63",
+                "resourcePath": "sprites\\sprDeathScreen\\sprDeathScreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "62dae915-53da-4586-acb9-e7d87058c240",
             "Value": {
                 "id": "72aefe55-9232-4d09-9994-4a6277b8d112",
@@ -332,6 +340,14 @@
                 "id": "dd8dee2a-c296-4961-9e55-12400e54d7b4",
                 "resourcePath": "sprites\\sprRedSky\\sprRedSky.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "72819299-6d39-49cc-b12f-ad1be0ecb2f4",
+            "Value": {
+                "id": "a23429c4-4426-47d5-a0af-05fc35d2c254",
+                "resourcePath": "rooms\\rmDeathScreen\\rmDeathScreen.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
