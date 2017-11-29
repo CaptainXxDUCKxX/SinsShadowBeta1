@@ -1,12 +1,11 @@
-///////CREATE\\\\\\\\
+ ///////CREATE\\\\\\\\
 
-/// GRAPPLE VARIABLES ///
+// GRAPPLE VARIABLES 
 active = false;
 iGrappleRadius = 150;
-instNearestGP = objGrappleBlock;
-fForceStrength = 10.0;
+instNearestGP = objGrappleBlock; 
 //mx = instNearestGP.x; // hook x coordinates
-//my = instNearestGP.y; // hook y coordinates
+//my = instNearestGP.y; // hook y coordinates 
 
 // PHYSICS VARIABLES
 fixtureAmelia = physics_fixture_create();
@@ -16,10 +15,14 @@ physics_fixture_set_circle_shape(fixtureAmelia, 5);
 phy_rotation = 0;
 phy_fixed_rotation = true;
 
-/// ATTACK VARIABLES
+// ATTACK VARIABLES
+attacking = mouse_check_button_pressed(mb_left);
 attack = false;
 iAttackTimer = 2;
 alarm[2] = iAttackTimer;
+canAttack = true;
+bAttackAnim = false;
+
 
 iPrevFrameX = 0;
 
@@ -46,7 +49,11 @@ bUnspaced = true; //is the spacebar being held down
 bOnGround = false; //is Amelia on the ground
 bJumpImpulseSwitch = true; //"true" meaning "can jump"
 bJumping = false;
-bStillFalling = false;
+
+//TIMEOUT ANIMATION
+//sprite_index = sprTimeout;
+bDoingNothing = false;
+alarm [3] = (room_speed * 5);
 
 //physics collision
 phys_x = phy_position_x

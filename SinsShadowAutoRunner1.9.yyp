@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "31a16529-25fc-4f1f-9b44-3043988fc0a5",
+            "Value": {
+                "id": "6c117b2e-5388-421b-961f-d2bf45a101b8",
+                "resourcePath": "views\\31a16529-25fc-4f1f-9b44-3043988fc0a5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "320fe06b-08d8-4b50-9a18-9b6faf793373",
             "Value": {
                 "id": "89e3a2f7-9fa3-43de-bc60-50215d64ef73",
@@ -183,6 +191,14 @@
             }
         },
         {
+            "Key": "39849d8a-f81f-4081-b140-ce87ed8b363b",
+            "Value": {
+                "id": "9aa19de3-6871-4cea-8fdb-b2c2e8da749c",
+                "resourcePath": "sprites\\sprite36\\sprite36.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3c65baba-ef75-4ac5-a830-b039d53beb90",
             "Value": {
                 "id": "587c9b9a-7c3b-4ae4-895e-63d9c1315e4c",
@@ -196,6 +212,14 @@
                 "id": "d8e930c6-5db3-4e00-baf5-7b181f734c51",
                 "resourcePath": "objects\\objWinTrig\\objWinTrig.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "461a0257-a8ac-4d41-afb8-5a56985ce90c",
+            "Value": {
+                "id": "e976c434-27ba-4d53-b4ee-cbab86c2738e",
+                "resourcePath": "sprites\\sprAmeliaGrapple\\sprAmeliaGrapple.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -353,7 +377,7 @@
         {
             "Key": "72ec2695-8676-4497-87db-0c3371672f88",
             "Value": {
-                "id": "24de82e2-a7f5-4a65-8c42-c2573ec2954e",
+                "id": "d11db2f1-d664-4ece-a19f-929aafd76a67",
                 "resourcePath": "rooms\\VerticalSlice\\VerticalSlice.yy",
                 "resourceType": "GMRoom"
             }
@@ -371,6 +395,14 @@
             "Value": {
                 "id": "45102b51-34a6-453c-8991-9809945950cd",
                 "resourcePath": "sprites\\spr_StaminaBar\\spr_StaminaBar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "79d062bf-78c6-4ae2-9e0b-17a2cc20f0e0",
+            "Value": {
+                "id": "e3cac8a2-5eea-44c2-9d89-d7af5de1f9c2",
+                "resourcePath": "sprites\\sprHalfCollisionDown\\sprHalfCollisionDown.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -796,6 +828,14 @@
                 "id": "633c6f46-e116-4527-ae32-79ae1696a04a",
                 "resourcePath": "views\\efaaa198-17d9-4696-a64e-26518f69e0b9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f0b91796-54b7-4a01-9fbf-c662913dc295",
+            "Value": {
+                "id": "09724535-4ce4-43a0-8fd0-b732adfef448",
+                "resourcePath": "objects\\objCollisionPhysHALFTOP\\objCollisionPhysHALFTOP.yy",
+                "resourceType": "GMObject"
             }
         },
         {
