@@ -1,5 +1,5 @@
 ///// PLAYER MOVEMENT /////
-if(hspeed == 0) sprite_index = sprIdle;
+//if(hspeed == 0) sprite_index = sprIdle; //Currently breaking Timeout animation
 if(keyboard_check(vk_right)) || (gamepad_button_check(0, gp_padr)) || (gamepad_axis_value(0,gp_axislh) > 0.1)
 {
 	image_xscale = 1;
@@ -24,7 +24,7 @@ if(keyboard_check(vk_right)) || (gamepad_button_check(0, gp_padr)) || (gamepad_a
 	}
 }
 
-show_debug_message(fForceStrength);
+//show_debug_message(fForceStrength);
 
 if(keyboard_check(vk_left)) || (gamepad_button_check(0, gp_padl)) || (gamepad_axis_value(0,gp_axislh) < -0.1)
 {

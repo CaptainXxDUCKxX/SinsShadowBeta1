@@ -96,4 +96,17 @@ if (iCurrentHP <= 0)
 {
 	instance_destroy(objPlayerGrapple);
 	room_goto(rmDeathScreen);
-} 
+}
+
+//TIMEOUT ANIMATION
+
+if (alarm [3] = 0)
+{
+	//sprite_index = sprTimeout;
+	bDoingNothing = true;
+}
+
+if (bDoingNothing = true)
+{
+	sprite_index = sprTimeout;
+}
